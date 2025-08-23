@@ -26,7 +26,7 @@ export default function TransportationPage() {
             <Link href="/" className="flex items-center space-x-2">
               <div className="w-8 h-8 rounded-lg overflow-hidden">
                 <img
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DDDTW%E7%A4%BE%E7%BE%A4.jpg-ryACJIlrx99FYfXECRWxRpWrRD0uel.jpeg"
+                  src="/DDDTW-logo.jpg"
                   alt="DDD Taiwan Logo"
                   className="w-8 h-8 object-cover"
                 />
@@ -78,7 +78,7 @@ export default function TransportationPage() {
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.5234567890123!2d121.5277683!3d25.0537639!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a96730086bc9%3A0xbbc6dbbe139eac87!2z5Lit6I-v5rCR5ZgL5YWo5ZyL5ZWG5qWt57i96ZuH!5e0!3m2!1szh-TW!2stw!4v1234567890123!5m2!1szh-TW!2stw"
                         width="100%"
                         height="100%"
-                        style={{ border: 0 }}
+                        className="border-0"
                         allowFullScreen
                         loading="lazy"
                         referrerPolicy="no-referrer-when-downgrade"
