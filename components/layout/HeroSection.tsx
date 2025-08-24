@@ -119,8 +119,8 @@ export default function HeroSection() {
                 <div className="flex items-center justify-center w-12 h-12 bg-cyan-600/30 rounded-lg mb-2 mx-auto">
                   <MapPin className="w-6 h-6 text-cyan-300" />
                 </div>
-                <div className="text-2xl font-bold text-white">2</div>
-                <div className="text-sm text-gray-300">會場</div>
+                <div className="text-2xl font-bold text-white">4</div>
+                <div className="text-sm text-gray-300">議程</div>
               </div>
             </div>
           </div>
