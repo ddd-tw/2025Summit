@@ -7,36 +7,36 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 export default function AgendaPage() {
   const sessions = [
     {
-      time: "09:00 - 10:30",
-      title: "領域驅動設計基礎概念",
-      speaker: "張志明",
-      description: "深入探討 DDD 的核心概念與實務應用，包括領域模型、聚合根、值物件等重要觀念。",
-      track: "主會場 A",
-      type: "keynote",
-    },
-    {
-      time: "09:00 - 10:30",
-      title: "微服務架構設計實戰",
-      speaker: "李美玲",
-      description: "從單體架構到微服務的轉換策略，以及如何運用 DDD 設計微服務邊界。",
-      track: "會議室 B",
-      type: "workshop",
-    },
-    {
-      time: "11:00 - 12:30",
-      title: "事件風暴工作坊",
-      speaker: "王大明",
-      description: "透過實際案例學習事件風暴技術，快速理解複雜業務領域並建立共同語言。",
+      time: "09:00 - 12:00",
+      title: "從敘事到塑模",
+      speaker: "陳勉修(Michael)",
+      description: "用Domain Storytelling建立跨職能對齊的語意基礎。",
       track: "主會場 A",
       type: "workshop",
     },
     {
-      time: "11:00 - 12:30",
-      title: "CQRS 與 Event Sourcing",
-      speaker: "陳小華",
-      description: "命令查詢責任分離模式與事件溯源的設計原則，以及在大型系統中的應用經驗。",
+      time: "09:00 - 12:00",
+      title: "AI輔助軟體開發",
+      speaker: "張國昭(Arthur)，李民偉(Ean)",
+      description: "在軟體3.0時代，掌握AI驅動的開發語言。",
       track: "會議室 B",
-      type: "talk",
+      type: "workshop",
+    },
+    {
+      time: "13:00 - 16:00",
+      title: "從警示到行動：打造AI驅動的自動化Incident Response工具",
+      speaker: "劉鳳軒(Fong)",
+      description: "整合Logs、Code、Docs與Insights，重塑On-Call流程與團隊知識管理。",
+      track: "主會場 A",
+      type: "workshop",
+    },
+    {
+      time: "13:00 - 16:00",
+      title: "文件即程式碼",
+      speaker: "林鴻皓(River)，Tung",
+      description: "文件即程式碼，串接版本控制與自動化。",
+      track: "會議室 B",
+      type: "workshop",
     },
   ]
 
@@ -78,19 +78,25 @@ export default function AgendaPage() {
                 className="bg-slate-100/95 border-slate-200 backdrop-blur-sm hover:bg-slate-50 transition-colors shadow-lg"
               >
                 <CardHeader>
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-blue-600 font-semibold">{session.time}</span>
-                    <span
-                      className={`px-3 py-1 rounded-full text-xs font-medium ${
-                        session.type === "keynote"
-                          ? "bg-purple-100 text-purple-700 border border-purple-200"
-                          : session.type === "workshop"
-                            ? "bg-green-100 text-green-700 border border-green-200"
-                            : "bg-blue-100 text-blue-700 border border-blue-200"
-                      }`}
-                    >
-                      {session.type === "keynote" ? "主題演講" : session.type === "workshop" ? "工作坊" : "技術分享"}
-                    </span>
+                  <div className="flex items-center mb-2">
+                    <span className="text-blue-600 font-semibold mr-auto">{session.time}</span>
+                    <div className="flex items-center space-x-1">
+                      <span
+                        className={`px-3 py-1 rounded-full text-xs font-medium bg-purple-100 text-purple-700 border border-purple-200`}
+                      >
+                        {"演講"}
+                      </span>
+                      <span
+                        className={`px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-700 border border-green-200`}
+                      >
+                        {"工作坊"}
+                      </span>
+                      <span
+                        className={`px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-700 border border-blue-200`}
+                      >
+                        {"技術分享"}
+                      </span>
+                    </div>
                   </div>
                   <CardTitle className="text-slate-800 text-lg">{session.title}</CardTitle>
                 </CardHeader>
@@ -112,17 +118,49 @@ export default function AgendaPage() {
           </div>
 
           {/* Additional Info */}
-          <div className="mt-12 text-center">
-            <div className="bg-slate-100/95 rounded-lg p-6 backdrop-blur-sm shadow-lg border border-slate-200">
-              <h3 className="text-xl font-semibold text-slate-800 mb-4">注意事項</h3>
-              <div className="grid md:grid-cols-2 gap-4 text-slate-700 text-sm">
-                <div>
-                  <p>• 請提前15分鐘到達會場</p>
-                  <p>• 工作坊需要攜帶筆記型電腦</p>
+          <div className="mt-12">
+            <div className="bg-slate-100/95 rounded-lg p-8 backdrop-blur-sm shadow-lg border border-slate-200">
+              <div className="text-center mb-6">
+                <h3 className="text-2xl font-bold text-blue-700 inline-block pb-2 border-b-2 border-blue-500">注意事項</h3>
+              </div>
+              
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="bg-white/80 rounded-lg p-5 shadow-md border border-slate-100 transform transition-transform hover:scale-105">
+                  <div className="flex items-center mb-3">
+                    <div className="bg-blue-100 p-2 rounded-full mr-3">
+                      <Clock className="w-5 h-5 text-blue-600" />
+                    </div>
+                    <h4 className="font-semibold text-blue-800">會場與時間</h4>
+                  </div>
+                  <ul className="space-y-2 text-slate-700">
+                    <li className="flex items-start">
+                      <span className="text-blue-500 mr-2">•</span>
+                      <span>請提前15分鐘到達會場</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-blue-500 mr-2">•</span>
+                      <span>工作坊需要攜帶筆記型電腦</span>
+                    </li>
+                  </ul>
                 </div>
-                <div>
-                  <p>• 現場提供茶點與午餐</p>
-                  <p>• 會議資料將於會後提供下載</p>
+                
+                <div className="bg-white/80 rounded-lg p-5 shadow-md border border-slate-100 transform transition-transform hover:scale-105">
+                  <div className="flex items-center mb-3">
+                    <div className="bg-purple-100 p-2 rounded-full mr-3">
+                      <Users className="w-5 h-5 text-purple-600" />
+                    </div>
+                    <h4 className="font-semibold text-purple-800">服務與資料</h4>
+                  </div>
+                  <ul className="space-y-2 text-slate-700">
+                    <li className="flex items-start">
+                      <span className="text-purple-500 mr-2">•</span>
+                      <span>現場提供茶點(不提供午餐)</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-purple-500 mr-2">•</span>
+                      <span>會議資料將於會後提供下載</span>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
