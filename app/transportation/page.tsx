@@ -15,47 +15,13 @@ import {
   Navigation,
 } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import Header from "@/components/layout/Header"
+import Footer from "@/components/layout/Footer"
 
 export default function TransportationPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-900 via-blue-700 to-blue-500">
-      {/* Header */}
-      <header className="bg-blue-900/80 backdrop-blur-sm border-b border-blue-700/50">
-        <div className="container mx-auto px-4 py-4">
-          <nav className="flex items-center justify-between">
-            <Link href="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 rounded-lg overflow-hidden">
-                <img
-                  src="/DDDTW-logo.jpg"
-                  alt="DDD Taiwan Logo"
-                  className="w-8 h-8 object-cover"
-                />
-              </div>
-              <span className="text-white font-semibold text-lg">DDDesign TW</span>
-            </Link>
-            <div className="hidden md:flex items-center space-x-8 text-sm">
-              <Link href="/about" className="text-gray-300 hover:text-white transition-colors">
-                關於我們
-              </Link>
-              <Link href="/rules" className="text-gray-300 hover:text-white transition-colors">
-                大會守則
-              </Link>
-              <Link href="/agenda" className="text-gray-300 hover:text-white transition-colors">
-                議程資訊
-              </Link>
-              <Link href="/transportation" className="text-blue-400 hover:text-white transition-colors">
-                交通資訊
-              </Link>
-              <Link href="/speakers" className="text-gray-300 hover:text-white transition-colors">
-                講者資訊
-              </Link>
-              <a href="#tickets" className="text-gray-300 hover:text-white transition-colors">
-                購票
-              </a>
-            </div>
-          </nav>
-        </div>
-      </header>
+      <Header />
 
       {/* Main Content */}
       <main className="container mx-auto px-4 py-12">
@@ -64,7 +30,7 @@ export default function TransportationPage() {
             <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6">交通資訊</h1>
             {/* Map Section */}
             <div className="mb-12">
-              <Card className="bg-slate-100/95 border-slate-200 backdrop-blur-sm shadow-lg">
+              <Card className="bg-slate-100/95 border-slate-200 backdrop-blur-sm shadow-lg transform transition-transform hover:scale-105">
                 <CardHeader>
                   <CardTitle className="text-slate-800 flex items-center space-x-2">
                     <MapPin className="w-5 h-5" />
@@ -99,7 +65,7 @@ export default function TransportationPage() {
           {/* Transportation Methods */}
           <div className="space-y-8">
             {/* Bus */}
-            <Card className="bg-slate-100/95 border-slate-200 backdrop-blur-sm shadow-lg">
+            <Card className="bg-slate-100/95 border-slate-200 backdrop-blur-sm shadow-lg transform transition-transform hover:scale-105">
               <CardHeader>
                 <CardTitle className="text-slate-800 flex items-center space-x-2">
                   <Bus className="w-6 h-6 text-green-600" />
@@ -133,7 +99,7 @@ export default function TransportationPage() {
             </Card>
 
             {/* MRT Transportation */}
-            <Card className="bg-slate-100/95 border-slate-200 backdrop-blur-sm shadow-lg">
+            <Card className="bg-slate-100/95 border-slate-200 backdrop-blur-sm shadow-lg transform transition-transform hover:scale-105">
               <CardHeader>
                 <CardTitle className="text-slate-800 flex items-center space-x-2">
                   <Train className="w-6 h-6 text-blue-600" />
@@ -163,7 +129,7 @@ export default function TransportationPage() {
             </Card>
 
             {/* Driving */}
-            <Card className="bg-slate-100/95 border-slate-200 backdrop-blur-sm shadow-lg">
+            <Card className="bg-slate-100/95 border-slate-200 backdrop-blur-sm shadow-lg transform transition-transform hover:scale-105">
               <CardHeader>
                 <CardTitle className="text-slate-800 flex items-center space-x-2">
                   <Car className="w-6 h-6 text-purple-600" />
@@ -185,7 +151,7 @@ export default function TransportationPage() {
             </Card>
 
             {/* Parking Information */}
-            <Card className="bg-slate-100/95 border-slate-200 backdrop-blur-sm shadow-lg">
+            <Card className="bg-slate-100/95 border-slate-200 backdrop-blur-sm shadow-lg transform transition-transform hover:scale-105">
               <CardHeader>
                 <CardTitle className="text-slate-800 flex items-center space-x-2">
                   <Car className="w-6 h-6 text-orange-600" />
@@ -221,7 +187,7 @@ export default function TransportationPage() {
             </Card>
 
             {/* Recommended Transportation */}
-            <Card className="bg-slate-100/95 border-slate-200 backdrop-blur-sm shadow-lg">
+            <Card className="bg-slate-100/95 border-slate-200 backdrop-blur-sm shadow-lg transform transition-transform hover:scale-105">
               <CardHeader>
                 <CardTitle className="text-slate-800 flex items-center space-x-2">
                   <Navigation className="w-6 h-6 text-indigo-600" />
@@ -274,7 +240,7 @@ export default function TransportationPage() {
             </Card>
 
             {/* Important Notes */}
-            <div className="bg-slate-100/95 rounded-lg p-6 backdrop-blur-sm shadow-lg border border-slate-200">
+            <div className="bg-slate-100/95 rounded-lg p-6 backdrop-blur-sm shadow-lg border border-slate-200 transform transition-transform hover:scale-105">
               <h3 className="text-xl font-semibold text-slate-800 mb-4 flex items-center space-x-2">
                 <Clock className="w-5 h-5" />
                 <span>交通重要提醒</span>
@@ -302,81 +268,7 @@ export default function TransportationPage() {
         </div>
       </main>
 
-      {/* Social Media Links */}
-      <section className="py-12 bg-blue-900/50">
-        <div className="container mx-auto px-4 text-center">
-          <div className="flex justify-center space-x-6">
-            <a
-              href="mailto:info@dddesign.tw"
-              className="w-12 h-12 bg-blue-700 hover:bg-blue-600 rounded-lg flex items-center justify-center transition-colors"
-              aria-label="Email"
-            >
-              <Mail className="w-6 h-6 text-white" />
-            </a>
-            <a
-              href="#"
-              className="w-12 h-12 bg-blue-700 hover:bg-blue-600 rounded-lg flex items-center justify-center transition-colors"
-              aria-label="Messenger"
-            >
-              <MessageCircle className="w-6 h-6 text-white" />
-            </a>
-            <a
-              href="#"
-              className="w-12 h-12 bg-blue-700 hover:bg-blue-600 rounded-lg flex items-center justify-center transition-colors"
-              aria-label="Twitter"
-            >
-              <Twitter className="w-6 h-6 text-white" />
-            </a>
-            <a
-              href="#"
-              className="w-12 h-12 bg-blue-700 hover:bg-blue-600 rounded-lg flex items-center justify-center transition-colors"
-              aria-label="Instagram"
-            >
-              <Instagram className="w-6 h-6 text-white" />
-            </a>
-            <a
-              href="https://www.facebook.com/groups/dddtaiwan"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-12 h-12 bg-blue-700 hover:bg-blue-600 rounded-lg flex items-center justify-center transition-colors"
-              aria-label="Facebook"
-            >
-              <Facebook className="w-6 h-6 text-white" />
-            </a>
-            <a
-              href="#"
-              className="w-12 h-12 bg-blue-700 hover:bg-purple-600 rounded-lg flex items-center justify-center transition-colors"
-              aria-label="Discord"
-            >
-              <Users className="w-6 h-6 text-white" />
-            </a>
-            <a
-              href="#"
-              className="w-12 h-12 bg-blue-700 hover:bg-red-600 rounded-lg flex items-center justify-center transition-colors"
-              aria-label="YouTube"
-            >
-              <Youtube className="w-6 h-6 text-white" />
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-blue-900 border-t border-blue-700">
-        <div className="container mx-auto px-4 py-8 text-center">
-          <div className="flex items-center space-x-2 justify-center mb-4">
-            <div className="w-8 h-8 rounded-lg overflow-hidden">
-              <img
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DDDTW%E7%A4%BE%E7%BE%A4.jpg-ryACJIlrx99FYfXECRWxRpWrRD0uel.jpeg"
-                alt="DDD Taiwan Logo"
-                className="w-8 h-8 object-cover"
-              />
-            </div>
-            <span className="text-white font-semibold">DDDesign TW</span>
-          </div>
-          <p className="text-gray-400">Copyright © 2025 Domain Driven Design Taiwan.</p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }
