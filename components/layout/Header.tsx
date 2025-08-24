@@ -8,7 +8,7 @@ export default function Header() {
           <Link href="/" className="flex items-center space-x-2">
             <div className="w-8 h-8 rounded-lg overflow-hidden">
               <img
-                src="/DDDTW-logo.jpg"
+                src="/DDDTW-logo.png"
                 alt="DDD Taiwan Logo"
                 className="w-8 h-8 object-cover"
               />

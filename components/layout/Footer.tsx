@@ -51,26 +51,15 @@ export default function Footer() {
                   報名參加
                 </a>
               </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  志工招募
-                </a>
-              </li>
-              <li>
-                <a href="mailto:info@dddesign.tw" className="hover:text-white transition-colors">
-                  聯絡我們
-                </a>
-              </li>
             </ul>
           </div>
           <div>
             <h4 className="text-white font-semibold mb-4">聯絡資訊</h4>
             <div className="space-y-2 text-sm text-gray-400">
               <p>Email: info@dddesign.tw</p>
-              <p>電話: +886-2-1234-5678</p>
               <div className="flex space-x-4 pt-4">
                 <a
-                  href="https://www.facebook.com/groups/dddtaiwan"
+                  href="https://www.facebook.com/DDDCommunity.tw"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-white transition-colors"
@@ -79,9 +68,6 @@ export default function Footer() {
                 </a>
                 <a href="#" className="text-gray-400 hover:text-white transition-colors">
                   Twitter
-                </a>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  LinkedIn
                 </a>
               </div>
             </div>
