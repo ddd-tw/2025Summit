@@ -61,7 +61,14 @@ export default function AgendaPage() {
               </div>
               <div className="flex items-center justify-center space-x-2">
                 <MapPin className="w-5 h-5 text-purple-600" />
-                <span className="text-slate-700 font-medium">中華民國商業總會</span>
+                <a
+                  href="https://maps.app.goo.gl/JeeWMfDoyFPPmxPi9"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-slate-700 font-medium hover:text-blue-500 transition-colors"
+                >
+                  台北市商業會
+                </a>
               </div>
               <div className="flex items-center justify-center space-x-2">
                 <Users className="w-5 h-5 text-indigo-600" />

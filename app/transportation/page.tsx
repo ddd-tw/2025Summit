@@ -41,19 +41,19 @@ export default function TransportationPage() {
                   <div className="bg-slate-200/80 rounded-lg p-4 text-center border border-slate-300">
                     <div className="w-full h-96 bg-gradient-to-br from-blue-50 to-purple-50 rounded-lg overflow-hidden">
                       <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.5234567890123!2d121.5277683!3d25.0537639!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a96730086bc9%3A0xbbc6dbbe139eac87!2z5Lit6I-v5rCR5ZgL5YWo5ZyL5ZWG5qWt57i96ZuH!5e0!3m2!1szh-TW!2stw!4v1234567890123!5m2!1szh-TW!2stw"
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7228.9515234658975!2d121.53071999999999!3d25.051859!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a973462902af%3A0x82542a72815a4f06!2z5Y-w5YyX5biC5ZWG5qWt5pyD!5e0!3m2!1szh-TW!2stw!4v1756032104143!5m2!1szh-TW!2stw"
                         width="100%"
                         height="100%"
                         className="border-0"
                         allowFullScreen
                         loading="lazy"
                         referrerPolicy="no-referrer-when-downgrade"
-                        title="中華民國商業總會位置地圖"
+                        title="台北市商業會位置地圖"
                       ></iframe>
                     </div>
                     <div className="mt-4 text-sm text-slate-600">
-                      <p className="font-medium text-slate-800 mb-2">中華民國商業總會</p>
-                      <p>台北市中山區四平街12號1樓</p>
+                      <p className="font-medium text-slate-800 mb-2">台北市商業會</p>
+                      <p>台北市中山區南京東路二段72號6樓</p>
                       <p className="mt-2">點擊地圖可查看詳細路線規劃</p>
                     </div>
                   </div>
@@ -76,22 +76,17 @@ export default function TransportationPage() {
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-4">
                     <div className="bg-slate-200/80 rounded-lg p-4 border border-slate-300">
-                      <h4 className="text-green-600 font-semibold mb-2">松江長春路口站</h4>
+                      <h4 className="text-green-600 font-semibold mb-2">南京吉林路口站</h4>
                       <p className="text-slate-700 text-sm mb-2">
-                        路線：222 / 277 / 279 / 307 / 49 / 652 / 668 / 松江新生幹線
+                        路線：5 / 12 / 46 / 282 / 288 / 292 / 306 / 306區間車 / 652 / 711 / 1802 / 1803 / 承德幹線 / 紅25
                       </p>
                       <p className="text-slate-600 text-sm">步行約2分鐘即可抵達</p>
-                    </div>
-                    <div className="bg-slate-200/80 rounded-lg p-4 border border-slate-300">
-                      <h4 className="text-green-600 font-semibold mb-2">長春松江路口站</h4>
-                      <p className="text-slate-700 text-sm mb-2">路線：277 / 292 / 307 / 41 / 49</p>
-                      <p className="text-slate-600 text-sm">步行約1分鐘即可抵達</p>
                     </div>
                   </div>
                   <div className="bg-slate-200/80 rounded-lg p-4 border border-slate-300">
                     <h4 className="text-green-600 font-semibold mb-2">交通提醒</h4>
                     <p className="text-slate-700 text-sm leading-relaxed">
-                      可搭至松江長春或長春松江路口站，步行約1–2分鐘。也可搭乘多條路線至景福宮、中山南北路公車站步行來回。
+                      可搭至南京吉林路口站，步行約1–2分鐘。
                     </p>
                   </div>
                 </div>
@@ -111,17 +106,14 @@ export default function TransportationPage() {
                   <div className="flex items-center space-x-3 mb-4">
                     <div className="w-4 h-4 bg-orange-500 rounded-full"></div>
                     <div className="w-4 h-4 bg-green-500 rounded-full"></div>
-                    <h4 className="text-blue-600 font-semibold">松江南京站 8 號出口</h4>
+                    <h4 className="text-blue-600 font-semibold">松江南京站 1 號出口</h4>
                   </div>
                   <div className="space-y-2">
                     <p className="text-slate-700 text-sm">
                       <span className="font-medium">路線：</span>中和新蘆線、松山新店線
                     </p>
                     <p className="text-slate-700 text-sm">
-                      <span className="font-medium">步行時間：</span>約3分鐘
-                    </p>
-                    <p className="text-slate-700 text-sm leading-relaxed">
-                      亦可由南京復興站或中山國小站步行前往，步行時間為8–15分鐘左右。
+                      <span className="font-medium">步行時間：</span>約2分鐘
                     </p>
                   </div>
                 </div>
@@ -142,9 +134,9 @@ export default function TransportationPage() {
                     <Navigation className="w-4 h-4 text-purple-600" />
                     <h4 className="text-purple-600 font-semibold">導航地址</h4>
                   </div>
-                  <p className="text-slate-700 text-sm mb-2">台北市中山區四平街12號</p>
+                  <p className="text-slate-700 text-sm mb-2">台北市中山區南京東路二段72號</p>
                   <p className="text-slate-700 text-sm">
-                    由中山北路或松江路轉四平街進入。市中心車流大，建議避開上下班尖峰時間並提前出發。
+                    由林森北路或松江路進入。市中心車流大，建議避開上下班尖峰時間並提前出發。
                   </p>
                 </div>
               </CardContent>
@@ -164,18 +156,18 @@ export default function TransportationPage() {
                     <div className="bg-slate-200/80 rounded-lg p-4 border border-slate-300">
                       <h4 className="text-orange-600 font-semibold mb-2">路邊停車</h4>
                       <p className="text-slate-700 text-sm">
-                        四平街及周邊設有少量街邊停車格，限時收費，08:00–22:00 約 NT$40/時。
+                        根據臺北市停車管理工程處資料，南京東路四段及其附近路段屬於收費路邊停車格，其中 南京東路五段（雖一段距離稍遠，但仍可參考）屬於每小時 30 元的收費標準。
                       </p>
                     </div>
                     <div className="bg-slate-200/80 rounded-lg p-4 border border-slate-300">
                       <h4 className="text-orange-600 font-semibold mb-2">私人停車場</h4>
-                      <p className="text-slate-700 text-sm">松江路／建國北路及四平街附近私人停車場，約 NT$30–60/時。</p>
+                      <p className="text-slate-700 text-sm">長安國小地下停車場，小型車：計時 40元/時(09時~18時),30元/時(18時~09時)。</p>
                     </div>
                   </div>
                   <div className="space-y-4">
                     <div className="bg-slate-200/80 rounded-lg p-4 border border-slate-300">
                       <h4 className="text-orange-600 font-semibold mb-2">機車停車</h4>
-                      <p className="text-slate-700 text-sm">四平街、長春路路邊可停放機車。</p>
+                      <p className="text-slate-700 text-sm">使用「南京東路二段」路邊收費格，計次收費便捷，或長安國小地下停車場, 10元/時。</p>
                     </div>
                     <div className="bg-slate-200/80 rounded-lg p-4 border border-slate-300">
                       <h4 className="text-orange-600 font-semibold mb-2">建議</h4>
@@ -214,7 +206,7 @@ export default function TransportationPage() {
                     <div className="grid md:grid-cols-2 gap-4 text-sm">
                       <div>
                         <span className="text-green-600 font-medium">優點：</span>
-                        <span className="text-slate-700">搭至松江長春或長春松江站即可抵達，方便不習慣捷運換乘者。</span>
+                        <span className="text-slate-700">搭至南京吉林路口站即可抵達，方便不習慣捷運換乘者。</span>
                       </div>
                       <div>
                         <span className="text-red-600 font-medium">注意：</span>
