@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import Image from 'next/image'
+
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
 
@@ -12,7 +14,7 @@ export default function Header() {
         <nav className="flex items-center justify-between">
           <Link href="/" className="flex items-center space-x-2">
             <div className="w-8 h-8 rounded-lg overflow-hidden">
-              <img
+              <Image
                 src="/DDDTW-logo.png"
                 alt="DDD Taiwan Logo"
                 className="w-8 h-8 object-cover"
