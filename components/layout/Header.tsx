@@ -3,9 +3,11 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
+import { getImagePath } from "@/lib/paths";
 
 export default function Header() {
   const pathname = usePathname();
+  
   return (
     <header className="bg-blue-900/80 backdrop-blur-sm border-blue-700/50 relative z-20">
       <div className="container mx-auto px-4 py-4">
@@ -13,7 +15,7 @@ export default function Header() {
           <Link href="/" className="flex items-center space-x-2">
             <div className="w-8 h-8 rounded-lg overflow-hidden">
               <img
-                src="/DDDTW-logo.png"
+                src={getImagePath("/DDDTW-logo.png")}
                 alt="DDD Taiwan Logo"
                 className="w-8 h-8 object-cover"
               />

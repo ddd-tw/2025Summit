@@ -5,6 +5,7 @@ import {
   TooltipProvider, 
   TooltipTrigger 
 } from "@/components/ui/tooltip";
+import { getImagePath } from "@/lib/paths";
 
 export default function Footer() {
   return (
@@ -16,7 +17,7 @@ export default function Footer() {
               <div className="flex items-center space-x-2">
                 <div className="w-8 h-8 rounded-lg overflow-hidden">
                   <img
-                    src="/DDDTW-logo.png"
+                    src={getImagePath("/DDDTW-logo.png")}
                     alt="DDD Taiwan Logo"
                     className="w-8 h-8 object-cover"
                   />
