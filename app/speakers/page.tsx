@@ -23,6 +23,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { useState } from "react"
 import Header from "@/components/layout/Header"
 import Footer from "@/components/layout/Footer"
+import { getImagePath } from "@/lib/paths"
 
 export default function SpeakersPage() {
   const [activeTab, setActiveTab] = useState(0)
@@ -42,7 +43,7 @@ export default function SpeakersPage() {
           company: "樂屋國際資訊股份有限公司",
           topic: "從敘事到塑模",
           bio: "專注於領域驅動設計與Domain Storytelling應用於軟體工程流程中，促進人跡協作與語意對齊，讓AI工具能真正參與需求建模與架構設計，實現貼近業務語境且可持續演進的軟體工程實踐。",
-          image: "/placeholder.svg?height=200&width=200",
+          image: getImagePath("/placeholder.svg?height=200&width=200"),
           linkedin: "#",
           twitter: "#",
           experience: "長期於矩陣型組織中擔任技術領導、人事主管與敏捷教練等多重腳色",
@@ -70,7 +71,7 @@ export default function SpeakersPage() {
           company: "Appier",
           topic: "從警示到行動：打造AI驅動的自動化Incident Response工具",
           bio: "喜歡團隊一同開發勝過一人默默獨自寫程式。",
-          image: "/placeholder.svg?height=200&width=200",
+          image: getImagePath("/placeholder.svg?height=200&width=200"),
           linkedin: "#",
           twitter: "#",
           experience: "擔任過多個年會的講者/工作坊講者(JSDC、DDDTW、Agile Summit)",
@@ -98,7 +99,7 @@ export default function SpeakersPage() {
           company: "金融公司",
           topic: "AI輔助軟體開發",
           bio: "致力於軟體開發實務，並推廣領域驅動開發方法。",
-          image: "/placeholder.svg?height=200&width=200",
+          image: getImagePath("/placeholder.svg?height=200&width=200"),
           linkedin: "#",
           twitter: "#",
           experience: "多年軟體開發經驗，曾任職於多家知名科技公司",
@@ -118,7 +119,7 @@ export default function SpeakersPage() {
           company: "長照公司",
           topic: "AI輔助軟體開發",
           bio: "目前專注於探討雲端資源、容器化與監控的統整，在支撐業務價值的同時，有效降低建置/營運成本、並系統的可靠性。。",
-          image: "/placeholder.svg?height=200&width=200",
+          image: getImagePath("/placeholder.svg?height=200&width=200"),
           linkedin: "#",
           twitter: "#",
           experience: "多年軟體開發經驗，曾任職於多家知名科技公司",
@@ -146,7 +147,7 @@ export default function SpeakersPage() {
           company: "新創科技",
           topic: "文件即程式碼",
           bio: "參與多個電子商務平台開發，並且在團隊領導與規劃軟體架構方面具有豐富經驗。",
-          image: "/placeholder.svg?height=200&width=200",
+          image: getImagePath("/placeholder.svg?height=200&width=200"),
           linkedin: "#",
           twitter: "#",
           experience: "多年軟體開發經驗，曾任職於多家知名科技公司",
@@ -166,7 +167,7 @@ export default function SpeakersPage() {
           company: "文創公司",
           topic: "文件即程式碼",
           bio: "將DDD視為人生哲學，並將其應用於生活各個面向。",
-          image: "/placeholder.svg?height=200&width=200",
+          image: getImagePath("/placeholder.svg?height=200&width=200"),
           linkedin: "#",
           twitter: "#",
           experience: "多年軟體開發經驗，曾任職於多家知名科技公司",
