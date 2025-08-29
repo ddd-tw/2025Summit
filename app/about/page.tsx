@@ -4,6 +4,7 @@ import Image from "next/image"
 import Header from "@/components/layout/Header"
 import Footer from "@/components/layout/Footer"
 import { Metadata } from 'next'
+import { getImagePath } from "@/lib/paths"
 
 export const metadata: Metadata = {
   title: '關於我們',
@@ -21,7 +22,7 @@ export default function AboutPage() {
         <div className="mb-12">
           <div className="relative w-full h-96 lg:h-[500px] rounded-lg overflow-hidden">
             <Image
-              src="https://conference.ddd-tw.com/2024/assets/images/banner-about.png"
+              src={getImagePath("/placeholder.jpg")}
               alt="DDD Taiwan Community"
               className="object-cover"
               fill
