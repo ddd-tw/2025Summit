@@ -47,7 +47,11 @@ export const getAssetPath = (path: string): string => {
 // 圖片資源專用函數（SPA 最佳化）
 export const getImagePath = (imageName: string): string => {
   // SPA 模式下，確保圖片路徑正確
-  return getAssetPath(imageName)
+  const path = getAssetPath(imageName)
+  
+  // 添加版本參數破解快取
+  const separator = path.includes('?') ? '&' : '?'
+  return `${path}${separator}v=${Date.now()}`
 }
 
 // SPA 路由輔助函數
