@@ -58,7 +58,7 @@ export default function Footer() {
               <h4 className="text-white font-semibold mb-4">參與方式</h4>
               <ul className="space-y-2 text-sm text-gray-400">
                 <li>
-                  <a href="#tickets" className="hover:text-white transition-colors">
+                  <a href="/tickets" className="hover:text-white transition-colors">
                     報名參加
                   </a>
                 </li>

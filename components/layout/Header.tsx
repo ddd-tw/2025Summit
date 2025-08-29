@@ -66,7 +66,7 @@ export default function Header() {
                 {link.label}
               </Link>
             ))}
-            <a href="#tickets" className="text-gray-300 hover:text-white transition-colors">
+            <a href="/tickets" className="text-gray-300 hover:text-white transition-colors">
               購票
             </a>
           </div>
@@ -99,7 +99,7 @@ export default function Header() {
                 </Link>
               ))}
               <a 
-                href="#tickets" 
+                href="/tickets" 
                 onClick={closeMenu}
                 className="block py-2 text-sm text-gray-300 hover:text-white transition-colors"
               >
