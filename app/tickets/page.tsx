@@ -1,4 +1,6 @@
 import { Metadata } from 'next'
+import Header from "@/components/layout/Header"
+import Footer from "@/components/layout/Footer"
 
 export const metadata: Metadata = {
   title: 'DDDTW 2025 - 購票資訊',
@@ -26,7 +28,10 @@ export const metadata: Metadata = {
 export default function TicketsPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-900 via-blue-700 to-blue-500">
+      <Header />
+
       {/* Hero Section */}
+      <main>
       <section className="relative py-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 via-blue-800/50 to-transparent"></div>
         <div className="container mx-auto px-4 relative z-10">
@@ -71,10 +76,10 @@ export default function TicketsPage() {
                   </div>
                   <div className="space-y-2">
                     <div className="text-5xl font-bold text-white">
-                      NT$ <span className="text-blue-400">1,200</span>
+                      NT$ <span className="text-blue-400">2,000</span>
                     </div>
                     <div className="text-sm text-gray-400">
-                      <span className="line-through">原價 NT$ 2,000</span>
+                      <span className="line-through">原價 NT$ 2,500</span>
                       <span className="text-green-400 ml-2 font-semibold">省 NT$ 500</span>
                     </div>
                   </div>
@@ -230,6 +235,9 @@ export default function TicketsPage() {
           </div>
         </div>
       </section>
+      </main>
+
+      <Footer />
     </div>
   )
 }

@@ -66,9 +66,9 @@ export default function Header() {
                 {link.label}
               </Link>
             ))}
-            <a href="/tickets" className="text-gray-300 hover:text-white transition-colors">
+            <Link href="/tickets" className="text-gray-300 hover:text-white transition-colors">
               購票
-            </a>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -98,13 +98,13 @@ export default function Header() {
                   {link.label}
                 </Link>
               ))}
-              <a 
+              <Link 
                 href="/tickets" 
                 onClick={closeMenu}
                 className="block py-2 text-sm text-gray-300 hover:text-white transition-colors"
               >
                 購票
-              </a>
+              </Link>
             </nav>
           </div>
         )}
