@@ -1,10 +1,8 @@
-import Link from "next/link"
-import { Mail, MessageCircle, Twitter, Instagram, Facebook, Youtube, Users, Clock, MapPin, User } from "lucide-react"
+import { Users, Clock, MapPin, User } from "lucide-react"
 import Header from "@/components/layout/Header"
 import Footer from "@/components/layout/Footer"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Metadata } from 'next'
-import { CONFIG } from '@/lib/config'
 import { AGENDA_DATA } from '@/lib/data/conference'
 
 export const metadata: Metadata = {

@@ -1,20 +1,21 @@
 import { Button } from "@/components/ui/button";
 import { Calendar, MapPin, Users, Clock } from "lucide-react";
-import { CONFIG } from "@/lib/config";
 import { UI_CONSTANTS } from "@/lib/constants";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function HeroSection() {
   return (
     <section className="relative min-h-screen overflow-hidden">
       {/* Full-width Banner Background */}
       <div className="absolute inset-0 w-full h-full">
-        <img
+        <Image
           src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/banner-xn9bBuzd5R8KxIhvKIsqdiHn8uNEE6.png"
           alt="DDDTW 2025 大會主視覺 - AI時代軟體開發方法成果發表會"
           className="w-full h-full object-cover"
-          loading="eager"
-          fetchPriority="high"
+          priority
+          fill
+          sizes="100vw"
         />
         {/* Overlay for text readability */}
         <div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 via-blue-800/50 to-transparent"></div>

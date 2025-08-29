@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button"
-import { Mail, MessageCircle, Twitter, Instagram, Facebook, Users, Youtube } from "lucide-react"
-import Link from "next/link"
+import { Mail, MessageCircle, Users } from "lucide-react"
+import Image from "next/image"
 import Header from "@/components/layout/Header"
 import Footer from "@/components/layout/Footer"
 import { Metadata } from 'next'
@@ -20,10 +20,12 @@ export default function AboutPage() {
         {/* Community Photo */}
         <div className="mb-12">
           <div className="relative w-full h-96 lg:h-[500px] rounded-lg overflow-hidden">
-            <img
+            <Image
               src="https://conference.ddd-tw.com/2024/assets/images/banner-about.png"
               alt="DDD Taiwan Community"
-              className="w-full h-full object-cover"
+              className="object-cover"
+              fill
+              sizes="(max-width: 1024px) 100vw, 1024px"
             />
           </div>
         </div>

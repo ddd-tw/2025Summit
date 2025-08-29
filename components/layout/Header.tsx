@@ -1,12 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import Image from 'next/image'
+import Image from "next/image";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
 import { Menu, X } from "lucide-react";
-import { getImagePath, getRoutePath } from "@/lib/paths";
+import { getImagePath } from "@/lib/paths";
 
 export default function Header() {
   const pathname = usePathname();
@@ -35,11 +35,13 @@ export default function Header() {
       <div className="container mx-auto px-4 py-4">
         <nav className="flex items-center justify-between" role="navigation" aria-label="主要導航">
           <Link href="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 rounded-lg overflow-hidden">
-              <img
+            <div className="w-8 h-8 rounded-lg overflow-hidden relative">
+              <Image
                 src={getImagePath("/DDDTW-logo.png")}
                 alt="DDD Taiwan Logo"
-                className="w-8 h-8 object-cover"
+                className="object-cover"
+                fill
+                sizes="32px"
               />
             </div>
             <span

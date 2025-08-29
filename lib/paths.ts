@@ -8,7 +8,7 @@ export const getBasePath = (): string => {
     // SPA 模式下，優先檢查客戶端環境
     if (typeof window !== 'undefined') {
       // 1. 檢查 Next.js 注入的 basePath (SPA export 時會注入)
-      const nextData = (window as any).__NEXT_DATA__
+      const nextData = (window as typeof window & { __NEXT_DATA__?: { basePath?: string } }).__NEXT_DATA__
       if (nextData?.basePath) {
         return nextData.basePath
       }
@@ -66,7 +66,7 @@ export const getPathInfo = () => {
   return {
     basePath: getBasePath(),
     currentPath: window.location.pathname,
-    nextData: (window as any).__NEXT_DATA__?.basePath || 'not found',
+    nextData: (window as typeof window & { __NEXT_DATA__?: { basePath?: string } }).__NEXT_DATA__?.basePath || 'not found',
     mode: 'SPA'
   }
 }

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { 
   Tooltip, 
   TooltipContent, 
@@ -6,7 +7,6 @@ import {
   TooltipTrigger 
 } from "@/components/ui/tooltip";
 import { getImagePath } from "@/lib/paths";
-import { CONFIG } from "@/lib/config";
 
 export default function Footer() {
   return (
@@ -16,11 +16,13 @@ export default function Footer() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="space-y-4">
               <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 rounded-lg overflow-hidden">
-                  <img
+                <div className="w-8 h-8 rounded-lg overflow-hidden relative">
+                  <Image
                     src={getImagePath("/DDDTW-logo.png")}
                     alt="DDD Taiwan Logo"
-                    className="w-8 h-8 object-cover"
+                    className="object-cover"
+                    fill
+                    sizes="32px"
                   />
                 </div>
                 <span className="text-white font-semibold">DDDesign TW</span>

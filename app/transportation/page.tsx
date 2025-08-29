@@ -1,12 +1,4 @@
-import Link from "next/link"
 import {
-  Mail,
-  MessageCircle,
-  Twitter,
-  Instagram,
-  Facebook,
-  Users,
-  Youtube,
   MapPin,
   Car,
   Train,
@@ -18,7 +10,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import Header from "@/components/layout/Header"
 import Footer from "@/components/layout/Footer"
 import { Metadata } from 'next'
-import { CONFIG } from '@/lib/config'
 
 export const metadata: Metadata = {
   title: '交通資訊',

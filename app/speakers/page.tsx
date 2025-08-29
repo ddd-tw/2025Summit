@@ -1,14 +1,8 @@
 "use client"
 
-import Link from "next/link"
 import {
-  Mail,
-  MessageCircle,
   Twitter,
-  Instagram,
-  Facebook,
   Users,
-  Youtube,
   Building,
   ExternalLink,
   X,
@@ -23,13 +17,11 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { useState } from "react"
 import Header from "@/components/layout/Header"
 import Footer from "@/components/layout/Footer"
-import { getImagePath } from "@/lib/paths"
-import { UI_CONSTANTS } from "@/lib/constants"
-import { SPEAKERS_DATA } from "@/lib/data/conference"
+import { SPEAKERS_DATA, type Speaker } from "@/lib/data/conference"
 
 export default function SpeakersPage() {
   const [activeTab, setActiveTab] = useState(0)
-  const [selectedSpeaker, setSelectedSpeaker] = useState<any>(null)
+  const [selectedSpeaker, setSelectedSpeaker] = useState<Speaker | null>(null)
   const [isLightboxOpen, setIsLightboxOpen] = useState(false)
 
   // 使用統一的數據層，避免重複程式碼
@@ -71,7 +63,7 @@ export default function SpeakersPage() {
 
   const currentTopic = speakersByTopic[activeTab]
 
-  const openLightbox = (speaker: any) => {
+  const openLightbox = (speaker: Speaker) => {
     setSelectedSpeaker(speaker)
     setIsLightboxOpen(true)
     document.body.style.overflow = "hidden" // 防止背景滾動

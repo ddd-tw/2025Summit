@@ -1,9 +1,6 @@
-import Link from "next/link"
-import { Mail, MessageCircle, Twitter, Instagram, Facebook, Users, Youtube } from "lucide-react"
 import Header from "@/components/layout/Header"
 import Footer from "@/components/layout/Footer"
 import { Metadata } from 'next'
-import { CONFIG } from '@/lib/config'
 
 export const metadata: Metadata = {
   title: '大會守則',

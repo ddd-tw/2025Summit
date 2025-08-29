@@ -14,7 +14,7 @@ const nextConfig = {
   
   // SPA 必要配置
   images: {
-    unoptimized: true, // SPA 不支援 Next.js 圖片最佳化
+    unoptimized: false, // Next.js 15+ 支援 SPA 圖片優化！
   },
   
   // 建構優化
