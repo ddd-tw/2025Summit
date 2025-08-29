@@ -3,6 +3,12 @@ import { Mail, MessageCircle, Twitter, Instagram, Facebook, Users, Youtube } fro
 import Link from "next/link"
 import Header from "@/components/layout/Header"
 import Footer from "@/components/layout/Footer"
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: '關於我們',
+  description: 'Domain Driven Design Taiwan (DDD Taiwan) 致力於在台灣推廣領域驅動設計與實踐經驗，建立專業技術社群。',
+}
 
 export default function AboutPage() {
   return (

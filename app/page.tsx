@@ -12,9 +12,11 @@ export default function ConferencePage() {
       <Header />
 
       {/* Hero Section with Full-width Banner */}
-      <HeroSection />
+      <main id="main-content">
+        <HeroSection />
 
-      <AboutSection />
+        <AboutSection />
+      </main>
 
       {/* Footer */}
       <Footer />

@@ -6,13 +6,14 @@ import {
   TooltipTrigger 
 } from "@/components/ui/tooltip";
 import { getImagePath } from "@/lib/paths";
+import { CONFIG } from "@/lib/config";
 
 export default function Footer() {
   return (
     <TooltipProvider delayDuration={200}>
       <footer className="bg-blue-900 border-blue-700">
         <div className="container mx-auto px-4 py-12">
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="space-y-4">
               <div className="flex items-center space-x-2">
                 <div className="w-8 h-8 rounded-lg overflow-hidden">

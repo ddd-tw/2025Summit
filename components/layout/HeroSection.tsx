@@ -1,5 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Calendar, MapPin, Users, Clock } from "lucide-react";
+import { CONFIG } from "@/lib/config";
+import { UI_CONSTANTS } from "@/lib/constants";
 import Link from "next/link";
 
 export default function HeroSection() {
@@ -9,8 +11,10 @@ export default function HeroSection() {
       <div className="absolute inset-0 w-full h-full">
         <img
           src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/banner-xn9bBuzd5R8KxIhvKIsqdiHn8uNEE6.png"
-          alt="DDD Taiwan Conference - AI‑Era Software Development Practices"
+          alt="DDDTW 2025 大會主視覺 - AI時代軟體開發方法成果發表會"
           className="w-full h-full object-cover"
+          loading="eager"
+          fetchPriority="high"
         />
         {/* Overlay for text readability */}
         <div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 via-blue-800/50 to-transparent"></div>
@@ -60,20 +64,20 @@ export default function HeroSection() {
             <div className="space-y-4">
               <div className="flex items-center space-x-2 text-blue-300">
                 <Calendar className="w-5 h-5" />
-                <span className="text-lg font-medium">2025 / 11 / 08 </span>
+                <span className="text-lg font-medium">2025 / 11 / 08</span>
               </div>
               <p className="text-gray-200 text-lg">臺灣領域驅動設計成果發表會</p>
             </div>
 
             <div className="space-y-6">
-              <h1 className="text-5xl lg:text-7xl font-bold text-white leading-tight drop-shadow-lg">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white leading-tight drop-shadow-lg">
                 AI時代
                 <br />
                 <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
                   軟體開發方法
                 </span>
               </h1>
-              <p className="text-xl text-gray-200 font-light drop-shadow-md">AI‑Era Software Development Practices</p>
+              <p className="text-lg sm:text-xl text-gray-200 font-light drop-shadow-md">AI‑Era Software Development Practices</p>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -98,28 +102,28 @@ export default function HeroSection() {
                 <div className="flex items-center justify-center w-12 h-12 bg-blue-600/30 rounded-lg mb-2 mx-auto">
                   <Users className="w-6 h-6 text-blue-300" />
                 </div>
-                <div className="text-2xl font-bold text-white">100+</div>
+                <div className="text-2xl font-bold text-white">{UI_CONSTANTS.STATISTICS.PARTICIPANTS}</div>
                 <div className="text-sm text-gray-300">參與者</div>
               </div>
               <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-4">
                 <div className="flex items-center justify-center w-12 h-12 bg-purple-600/30 rounded-lg mb-2 mx-auto">
                   <Clock className="w-6 h-6 text-purple-300" />
                 </div>
-                <div className="text-2xl font-bold text-white">8</div>
+                <div className="text-2xl font-bold text-white">{UI_CONSTANTS.STATISTICS.HOURS}</div>
                 <div className="text-sm text-gray-300">小時</div>
               </div>
               <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-4">
                 <div className="flex items-center justify-center w-12 h-12 bg-indigo-600/30 rounded-lg mb-2 mx-auto">
                   <Users className="w-6 h-6 text-indigo-300" />
                 </div>
-                <div className="text-2xl font-bold text-white">13+</div>
+                <div className="text-2xl font-bold text-white">{UI_CONSTANTS.STATISTICS.SPEAKERS}</div>
                 <div className="text-sm text-gray-300">講者</div>
               </div>
               <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-4">
                 <div className="flex items-center justify-center w-12 h-12 bg-cyan-600/30 rounded-lg mb-2 mx-auto">
                   <MapPin className="w-6 h-6 text-cyan-300" />
                 </div>
-                <div className="text-2xl font-bold text-white">4</div>
+                <div className="text-2xl font-bold text-white">{UI_CONSTANTS.STATISTICS.SESSIONS}</div>
                 <div className="text-sm text-gray-300">議程</div>
               </div>
             </div>
