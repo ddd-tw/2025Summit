@@ -49,9 +49,9 @@ export const getImagePath = (imageName: string): string => {
   // SPA 模式下，確保圖片路徑正確
   const path = getAssetPath(imageName)
   
-  // 添加版本參數破解快取
-  const separator = path.includes('?') ? '&' : '?'
-  return `${path}${separator}v=${Date.now()}`
+  // 添加固定版本參數破解快取（避免 SSG 時間不一致）
+  const version = '20250830001' // 格式：YYYYMMDD + 版本號
+  return `${path}?v=${version}`
 }
 
 // SPA 路由輔助函數

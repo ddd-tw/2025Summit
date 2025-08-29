@@ -3,7 +3,6 @@ import { Calendar, MapPin, Users, Clock } from "lucide-react";
 import { UI_CONSTANTS } from "@/lib/constants";
 import Link from "next/link";
 import Image from "next/image";
-import { getImagePath } from "@/lib/paths";
 
 export default function HeroSection() {
   return (
@@ -11,7 +10,7 @@ export default function HeroSection() {
       {/* Full-width Banner Background */}
       <div className="absolute inset-0 w-full h-full">
         <Image
-          src={getImagePath("/placeholder.jpg")}
+          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/banner-xn9bBuzd5R8KxIhvKIsqdiHn8uNEE6.png"
           alt="DDDTW 2025 大會主視覺 - AI時代軟體開發方法成果發表會"
           className="w-full h-full object-cover"
           priority
