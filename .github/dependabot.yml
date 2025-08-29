@@ -1,0 +1,36 @@
+# GitHub Dependabot 配置
+# 自動更新依賴和 GitHub Actions
+
+version: 2
+updates:
+  # Package dependencies
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+    open-pull-requests-limit: 5
+    reviewers:
+      - "ddd-tw-conference"
+    assignees:
+      - "ddd-tw-conference"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+
+  # GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/.github/workflows"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+    open-pull-requests-limit: 3
+    reviewers:
+      - "ddd-tw-conference"
+    assignees:
+      - "ddd-tw-conference"
+    commit-message:
+      prefix: "ci"
+      include: "scope"
