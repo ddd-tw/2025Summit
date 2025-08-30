@@ -1,44 +1,18 @@
-import Link from "next/link"
-import { Mail, MessageCircle, Twitter, Instagram, Facebook, Youtube, Users, Clock, MapPin, User } from "lucide-react"
+import { Users, Clock, MapPin, User } from "lucide-react"
 import Header from "@/components/layout/Header"
 import Footer from "@/components/layout/Footer"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Metadata } from 'next'
+import { AGENDA_DATA } from '@/lib/data/conference'
+
+export const metadata: Metadata = {
+  title: '議程資訊',
+  description: 'DDDTW 2025 議程安排 - 2025年11月8日 AI時代軟體開發方法，包含工作坊與專題演講。',
+}
 
 export default function AgendaPage() {
-  const sessions = [
-    {
-      time: "09:00 - 12:00",
-      title: "從敘事到塑模",
-      speaker: "陳勉修(Michael)",
-      description: "用Domain Storytelling建立跨職能對齊的語意基礎。",
-      track: "主會場 A",
-      type: "workshop",
-    },
-    {
-      time: "09:00 - 12:00",
-      title: "AI輔助軟體開發",
-      speaker: "張國昭(Arthur)，李民偉(Ean)",
-      description: "在軟體3.0時代，掌握AI驅動的開發語言。",
-      track: "會議室 B",
-      type: "workshop",
-    },
-    {
-      time: "13:00 - 16:00",
-      title: "從警示到行動：打造AI驅動的自動化Incident Response工具",
-      speaker: "劉鳳軒(Fong)",
-      description: "整合Logs、Code、Docs與Insights，重塑On-Call流程與團隊知識管理。",
-      track: "主會場 A",
-      type: "workshop",
-    },
-    {
-      time: "13:00 - 16:00",
-      title: "文件即程式碼",
-      speaker: "林鴻皓(River)，Tung",
-      description: "文件即程式碼，串接版本控制與自動化。",
-      track: "會議室 B",
-      type: "workshop",
-    },
-  ]
+  // 使用統一資料層
+  const sessions = AGENDA_DATA
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-900 via-blue-700 to-blue-500">
@@ -48,13 +22,13 @@ export default function AgendaPage() {
       <main className="container mx-auto px-4 py-12">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4">議程資訊</h1>
-            <p className="text-xl text-gray-200">2025年11月8日 AI時代軟體開發方法</p>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">議程資訊</h1>
+            <p className="text-lg sm:text-xl text-gray-200">2025年11月8日 AI時代軟體開發方法</p>
           </div>
 
           {/* Conference Date and Info */}
           <div className="bg-slate-100/95 rounded-lg p-6 backdrop-blur-sm mb-8 shadow-lg border border-slate-200">
-            <div className="grid md:grid-cols-3 gap-6 text-center">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-center">
               <div className="flex items-center justify-center space-x-2">
                 <Clock className="w-5 h-5 text-blue-600" />
                 <span className="text-slate-700 font-medium">09:00 - 17:00</span>
@@ -78,7 +52,7 @@ export default function AgendaPage() {
           </div>
 
           {/* Agenda Grid - 2 Columns, 2 Rows */}
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {sessions.map((session, index) => (
               <Card
                 key={index}

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { 
   Tooltip, 
   TooltipContent, 
@@ -12,14 +13,16 @@ export default function Footer() {
     <TooltipProvider delayDuration={200}>
       <footer className="bg-blue-900 border-blue-700">
         <div className="container mx-auto px-4 py-12">
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="space-y-4">
               <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 rounded-lg overflow-hidden">
-                  <img
+                <div className="w-8 h-8 rounded-lg overflow-hidden relative">
+                  <Image
                     src={getImagePath("/DDDTW-logo.png")}
                     alt="DDD Taiwan Logo"
-                    className="w-8 h-8 object-cover"
+                    className="object-cover"
+                    fill
+                    sizes="32px"
                   />
                 </div>
                 <span className="text-white font-semibold">DDDesign TW</span>
@@ -55,9 +58,9 @@ export default function Footer() {
               <h4 className="text-white font-semibold mb-4">參與方式</h4>
               <ul className="space-y-2 text-sm text-gray-400">
                 <li>
-                  <a href="#tickets" className="hover:text-white transition-colors">
+                  <Link href="/tickets" className="hover:text-white transition-colors">
                     報名參加
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

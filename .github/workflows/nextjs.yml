@@ -1,18 +1,29 @@
+name: Build and Deploy Next.js SPA
+
 on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
-  cache-and-install:
+  build-and-deploy:
     runs-on: ubuntu-latest
+    
+    # Add timeout and concurrency control
+    timeout-minutes: 15
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+      cancel-in-progress: true
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Install Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version-file: ".nvmrc"
 
@@ -21,6 +32,7 @@ jobs:
         id: pnpm-install
         with:
           version: latest
+          run_install: false # Don't auto install, we'll do it manually with caching
 
       - name: Get pnpm store directory
         id: pnpm-cache
@@ -28,7 +40,7 @@ jobs:
         run: |
           echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
 
-      - uses: actions/cache@v3
+      - uses: actions/cache@v4
         name: Setup pnpm cache
         with:
           path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
@@ -36,14 +48,35 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
 
-      - name: Install dependencies
-        run: pnpm install
+      - uses: actions/cache@v4
+        name: Setup Next.js cache
+        with:
+          path: |
+            ${{ github.workspace }}/.next/cache
+          # Generate a new cache whenever packages or source files change
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.yaml') }}-${{ hashFiles('**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx') }}
+          # If source files changed but packages didn't, rebuild from a prior cache
+          restore-keys: |
+            ${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.yaml') }}-
 
-      - name: Build
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build with Next.js cache
         run: pnpm run build
+        env:
+          # Optimize Next.js build for GitHub Actions
+          NEXT_TELEMETRY_DISABLED: 1
+          # Add more build optimizations
+          NODE_ENV: production
+          CI: true
        
-      - name: Deploy
+      - name: Deploy to GitHub Pages
+        # Only deploy on push to main, not on PRs
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./out
+          # Deployment optimizations
+          force_orphan: true

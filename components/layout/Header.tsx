@@ -1,25 +1,47 @@
 "use client";
 
 import Link from "next/link";
-import Image from 'next/image'
-
+import Image from "next/image";
+import { useState } from "react";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
+import { Menu, X } from "lucide-react";
 import { getImagePath } from "@/lib/paths";
 
 export default function Header() {
   const pathname = usePathname();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const closeMenu = () => setIsMenuOpen(false);
+
+  const navLinks = [
+    { href: "/about", label: "關於我們" },
+    { href: "/rules", label: "大會守則" },
+    { href: "/agenda", label: "議程資訊" },
+    { href: "/transportation", label: "交通資訊" },
+    { href: "/speakers", label: "講者資訊" },
+  ];
   
   return (
-    <header className="bg-blue-900/80 backdrop-blur-sm border-blue-700/50 relative z-20">
+    <header className="bg-blue-900/80 backdrop-blur-sm border-blue-700/50 relative z-20" role="banner">
+      {/* Skip to main content link */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-white text-blue-900 px-4 py-2 rounded-md z-50"
+      >
+        跳至主要內容
+      </a>
       <div className="container mx-auto px-4 py-4">
-        <nav className="flex items-center justify-between">
+        <nav className="flex items-center justify-between" role="navigation" aria-label="主要導航">
           <Link href="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 rounded-lg overflow-hidden">
-              <img
+            <div className="w-8 h-8 rounded-lg overflow-hidden relative">
+              <Image
                 src={getImagePath("/DDDTW-logo.png")}
                 alt="DDD Taiwan Logo"
-                className="w-8 h-8 object-cover"
+                className="object-cover"
+                fill
+                sizes="32px"
               />
             </div>
             <span
@@ -32,56 +54,60 @@ export default function Header() {
             </span>
           </Link>
           <div className="hidden md:flex items-center space-x-8 text-sm">
-            <Link
-              href="/about"
-              className={clsx(
-                "hover:text-white transition-colors",
-                pathname === "/about" ? "text-white" : "text-gray-300"
-              )}
-            >
-              關於我們
-            </Link>
-            <Link
-              href="/rules"
-              className={clsx(
-                "hover:text-white transition-colors",
-                pathname === "/rules" ? "text-white" : "text-gray-300"
-              )}
-            >
-              大會守則
-            </Link>
-            <Link
-              href="/agenda"
-              className={clsx(
-                "hover:text-white transition-colors",
-                pathname === "/agenda" ? "text-white" : "text-gray-300"
-              )}
-            >
-              議程資訊
-            </Link>
-            <Link
-              href="/transportation"
-              className={clsx(
-                "hover:text-white transition-colors",
-                pathname === "/transportation" ? "text-white" : "text-gray-300"
-              )}
-            >
-              交通資訊
-            </Link>
-            <Link
-              href="/speakers"
-              className={clsx(
-                "hover:text-white transition-colors",
-                pathname === "/speakers" ? "text-white" : "text-gray-300"
-              )}
-            >
-              講者資訊
-            </Link>
-            <a href="#tickets" className="text-gray-300 hover:text-white transition-colors">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={clsx(
+                  "hover:text-white transition-colors",
+                  pathname === link.href ? "text-white" : "text-gray-300"
+                )}
+              >
+                {link.label}
+              </Link>
+            ))}
+            <Link href="/tickets" className="text-gray-300 hover:text-white transition-colors">
               購票
-            </a>
+            </Link>
           </div>
+
+          {/* Mobile menu button */}
+          <button
+            onClick={toggleMenu}
+            className="md:hidden text-white hover:text-gray-300 transition-colors"
+            aria-label="切換導航選單"
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </nav>
+
+        {/* Mobile menu */}
+        {isMenuOpen && (
+          <div className="md:hidden absolute top-full left-0 right-0 bg-blue-900/95 backdrop-blur-sm border-t border-blue-700/50 z-30">
+            <nav className="px-4 py-4 space-y-3">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={closeMenu}
+                  className={clsx(
+                    "block py-2 text-sm hover:text-white transition-colors",
+                    pathname === link.href ? "text-white" : "text-gray-300"
+                  )}
+                >
+                  {link.label}
+                </Link>
+              ))}
+              <Link 
+                href="/tickets" 
+                onClick={closeMenu}
+                className="block py-2 text-sm text-gray-300 hover:text-white transition-colors"
+              >
+                購票
+              </Link>
+            </nav>
+          </div>
+        )}
       </div>
     </header>
   );

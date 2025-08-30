@@ -1,7 +1,11 @@
-import Link from "next/link"
-import { Mail, MessageCircle, Twitter, Instagram, Facebook, Users, Youtube } from "lucide-react"
 import Header from "@/components/layout/Header"
 import Footer from "@/components/layout/Footer"
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: '大會守則',
+  description: 'DDDTW 2025 大會活動行為準則 - 營造友善、包容且專業的學習環境。',
+}
 
 export default function RulesPage() {
   return (
