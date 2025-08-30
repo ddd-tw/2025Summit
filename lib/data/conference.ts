@@ -225,6 +225,28 @@ export const SPEAKERS_DATA: SpeakerTopic[] = [
           github: "https://github.com/speaker",
           website: "https://speaker-website.com",
         },
+      },
+      {
+        name: "水球潘",
+        title: "軟工革命軍團長",
+        company: "軟體設計模式精通之旅創辦人",
+        topic: "文件即程式碼",
+        bio: "把架構設計變成可以自動化的 SOP，每天都全職把自己取代的軟工熱血老師。",
+        image: getImagePath("/placeholder-user.jpg"),
+        linkedin: "#",
+        twitter: "#",
+        github: "#",
+        website: "#",
+        experience: "軟體設計模式精通之旅創辦人，專注於架構自動化與軟工教育推廣。",
+        expertise: ["軟體設計模式", "架構自動化", "軟工教育"],
+        education: "",
+        achievements: ["軟工革命軍團長", "軟體設計模式精通之旅創辦人"],
+        socialLinks: {
+          linkedin: "#",
+          twitter: "#",
+          github: "#",
+          website: "#",
+        },
       }
     ],
   }
@@ -263,7 +285,15 @@ export const AGENDA_DATA: Session[] = [
     description: "文件即程式碼，串接版本控制與自動化。",
     track: "會議室 B",
     type: "workshop",
-  }
+  },
+  {
+    time: "13:00 - 16:00",
+    title: "靠 BDD + DDD 做到 AI 100% 全自動化後端開發",
+    speaker: "水球潘",
+    description: `我只講一件事，要做到 100% 後端 AI 全自動化開發，該做哪些事？\n\n我講的是 100% 全自動化，不是 80% 也不是 90% 也不是 99.9%，也不是 99.99999%。\n\n我說的是 100%。\n\n所謂的 100% 的意思就是你只要提交完規格之後，就可以完全不 code review，可以去玩遊戲的那種 100%。\n\n從 70% 一路到 100% 全自動化，你知道最重要的是什麼嗎？\n\n是 Prompt?\n\n不，怎麼可能是 Prompt，Prompt 根本無關緊要。其實答案是 BDD 和 DDD 這兩大重要實踐的極致落地。\n\n你各位對 DDD 有關注的人全部都賭對了！\n\n要做到 100% 全自動化開發，如果只會寫規格，寫可執行規格，寫各種 Given When Then，但是卻沒有 DDD 的本事的話，是不可能做到的！\n\n如果有 DDD 的思維卻沒有 BDD 的可執行性的話，那也是無法做到全自動化開發的。\n\n一切都要做好做滿，雖然成本很大，但就能得到 100% AI 全自動化開發的甜美果實。`,
+    track: "",
+    type: "talk",
+  },
 ]
 
 // 統計數據
