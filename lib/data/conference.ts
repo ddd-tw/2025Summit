@@ -170,7 +170,7 @@ export const SPEAKERS_DATA: SpeakerTopic[] = [
         company: "新創科技",
         topic: "文件即程式碼",
         bio: "開發過多個電子商務平台，並在帶領團隊與規劃軟體架構方面具有豐富經驗。對領域驅動設計（DDD）充滿熱情，並且在DDD社群中積極貢獻。經常在團隊中引進新的技術工具和開發流程，並且鼓勵團隊學習與進步。",
-        image: getImagePath("https://static.accupass.com/visitant/2305121125141809121796.jpg"),
+        image: "https://static.accupass.com/visitant/2305121125141809121796.jpg",
         linkedin: "#",
         twitter: "#",
         experience: "多年軟體開發經驗，曾任職於多家知名科技公司",
