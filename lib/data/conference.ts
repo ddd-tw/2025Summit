@@ -165,28 +165,6 @@ export const SPEAKERS_DATA: SpeakerTopic[] = [
     color: "indigo",
     speakers: [
       {
-        name: "張國昭(Arthur)，李民偉(Ean)",
-        title: "技術總監 / 資深軟體工程師",
-        company: "GitLab Inc. / 獨立開發者",
-        topic: "文件即程式碼",
-        bio: "專精於DevOps文化推廣與實踐，致力於將文件管理納入軟體開發生命週期，透過版本控制和自動化工具提升團隊協作效率與程式碼品質。",
-        image: getImagePath("/placeholder-user.jpg"),
-        linkedin: "#",
-        twitter: "#",
-        github: "#",
-        website: "#",
-        experience: "在國際軟體公司擁有10年+技術領導經驗",
-        expertise: ["DevOps", "文件工程", "自動化測試", "CI/CD"],
-        education: "國立台灣大學資訊工程學系",
-        achievements: ["DDD Taiwan 社群核心志工", "年會講者"],
-        socialLinks: {
-          linkedin: "https://linkedin.com/in/speaker",
-          twitter: "https://twitter.com/speaker",
-          github: "https://github.com/speaker",
-          website: "https://eandev.com/",
-        },
-      },
-      {
         name: "林鴻皓(River)",
         title: "技術領導",
         company: "新創科技",
